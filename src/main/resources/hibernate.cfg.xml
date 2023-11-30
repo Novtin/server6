@@ -10,11 +10,20 @@
             name="hibernate.connection.url">jdbc:postgresql://localhost:5432/store_db</property>
     <property name="hibernate.connection.username">postgres</property>
     <property name="hibernate.connection.password">postgres</property>
-    <property name="hibernate.connection.pool_size">1</property>
-        <mapping class="entities.Client"/>
-        <mapping class="entities.Rent"/>
-        <mapping class="entities.SportsEquipment"/>
-        <mapping class="entities.Staff"/>
-        <mapping class="entities.Store"/>
+        <property name="org.hibernate.flushMode">ALWAYS</property>
+        <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping class="application.entities.Client"/>
+        <mapping class="application.entities.Rent"/>
+        <mapping class="application.entities.SportsEquipment"/>
+        <mapping class="application.entities.Staff"/>
+        <mapping class="application.entities.Store"/>
     </session-factory>
 </hibernate-configuration>

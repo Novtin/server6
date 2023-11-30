@@ -1,6 +1,6 @@
-package entities;
+package application.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -17,10 +17,10 @@ public class SportsEquipment {
     @Column(name = "name", nullable = false, length = 50)
     private String name;
     @Basic
-    @Column(name = "cost", nullable = false, precision = 2)
+    @Column(name = "cost", nullable = false, precision = 12, scale = 2)
     private BigDecimal cost;
     @Basic
-    @Column(name = "penalty", nullable = false, precision = 2)
+    @Column(name = "penalty", nullable = false, precision = 12, scale = 2)
     private BigDecimal penalty;
     @ManyToOne
     @JoinColumn(name = "store_id", nullable = false)

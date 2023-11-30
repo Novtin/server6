@@ -1,12 +1,6 @@
-package DAO;
+package application.DAO;
 
-import entities.Client;
-import entities.Store;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.Root;
+import application.entities.Store;
 
 public class StoreDAO extends GenericDAO<Store>{
 

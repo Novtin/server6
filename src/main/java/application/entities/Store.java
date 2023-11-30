@@ -1,9 +1,10 @@
-package entities;
+package application.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "store", schema = "public", catalog = "store_db")
 public class Store {
     @Id
     @Column(name = "store_id", nullable = false)

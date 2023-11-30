@@ -1,9 +1,12 @@
-package entities;
+package application.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "client", schema = "public", catalog = "store_db", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"passport_series", "phone_number"}),
+                @UniqueConstraint(columnNames = {"phone_number"})})
 public class Client {
     @Id
     @Column(name = "client_id", nullable = false)

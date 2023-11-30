@@ -1,7 +1,9 @@
-package DAO;
+package application.DAO;
 
-import entities.Client;
+import application.entities.Client;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class ClientDAO extends GenericDAO<Client> {
     public String getNameById(int id){
         Client client = getById(Client.class, id);

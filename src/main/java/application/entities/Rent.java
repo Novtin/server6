@@ -1,11 +1,12 @@
-package entities;
+package application.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
+@Table(name = "rent", schema = "public", catalog = "store_db")
 public class Rent {
     @Id
     @Column(name = "rent_id", nullable = false)
@@ -17,7 +18,7 @@ public class Rent {
     @Column(name = "end_rent", nullable = false)
     private Timestamp endRent;
     @Basic
-    @Column(name = "cost", nullable = false, precision = 2)
+    @Column(name = "cost", nullable = false, precision = 12, scale = 2)
     private BigDecimal cost;
     @ManyToOne
     @JoinColumn(name = "client_id", nullable = false)

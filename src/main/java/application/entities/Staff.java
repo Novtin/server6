@@ -1,10 +1,11 @@
-package entities;
+package application.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
+@Table(name = "staff", schema = "public", catalog = "store_db")
 public class Staff {
     @Id
     @Column(name = "staff_id", nullable = false)
@@ -19,7 +20,7 @@ public class Staff {
     @Column(name = "position", nullable = false, length = 50)
     private String position;
     @Basic
-    @Column(name = "salary", nullable = false, precision = 2)
+    @Column(name = "salary", nullable = false, precision = 12, scale = 2)
     private BigDecimal salary;
     @Basic
     @Column(name = "phone_number", nullable = false, length = 11)

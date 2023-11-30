@@ -1,7 +1,7 @@
-package DAO;
+package application.DAO;
 
-import entities.SportsEquipment;
-import entities.Store;
+import application.entities.SportsEquipment;
+import application.entities.Store;
 
 import java.math.BigDecimal;
 

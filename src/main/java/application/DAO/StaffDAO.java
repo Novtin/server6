@@ -1,41 +1,36 @@
-package DAO;
+package application.DAO;
 
-import entities.SportsEquipment;
-import entities.Staff;
-import entities.Store;
-import org.hibernate.Criteria;
+import application.entities.Staff;
 import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
-import org.hibernate.query.Query;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StaffDAO extends GenericDAO<Staff>{
-    public List<Staff> searchByNameAndSurname(String name, String surname) {
-        Session session = getSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Staff> criteriaQuery = builder.createQuery(Staff.class);
-        Root<Staff> root = criteriaQuery.from(Staff.class);
-
-        List<Predicate> predicates = new ArrayList<>();
-
-        if (checkString(name, 0, 50)) {
-            predicates.add(builder.equal(root.get("name"), name));
-        }
-
-        if (checkString(surname, 0, 50)) {
-            predicates.add(builder.equal(root.get("surname"), surname));
-        }
-        criteriaQuery.select(root).where(predicates.toArray(new Predicate[0]));
-
-        return session.createQuery(criteriaQuery).getResultList();
-    }
+    //public List<Staff> searchByNameAndSurname(String name, String surname) {
+    //    Session session = getSession();
+    //    CriteriaBuilder builder = session.getCriteriaBuilder();
+    //    CriteriaQuery<Staff> criteriaQuery = builder.createQuery(Staff.class);
+    //    Root<Staff> root = criteriaQuery.from(Staff.class);
+//
+    //    List<Predicate> predicates = new ArrayList<>();
+//
+    //    if (checkString(name, 0, 50)) {
+    //        predicates.add(builder.equal(root.get("name"), name));
+    //    }
+//
+    //    if (checkString(surname, 0, 50)) {
+    //        predicates.add(builder.equal(root.get("surname"), surname));
+    //    }
+    //    criteriaQuery.select(root).where(predicates.toArray(new Predicate[0]));
+//
+    //    return session.createQuery(criteriaQuery).getResultList();
+    //}
     public int updateInsertStaff(int id, String name,
                                  String surname, String position,
                                  BigDecimal salary, String phoneNumber){

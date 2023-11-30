@@ -1,0 +1,20 @@
+<div th:fragment="table">
+  <table class="table table-bordered">
+    <tr>
+      <td>№</td>
+      <td>Имя</td>
+      <td>Фамилия</td>
+      <td>Серия паспорта</td>
+      <td>Номер паспорта</td>
+      <td>Телефонный номер</td>
+    </tr>
+    <tr th:each="client : ${clients}">
+      <td th:text="${client.getClientId()}"></td>
+      <td th:text="${client.getName()}"></td>
+      <td th:text="${client.getSurname()}"></td>
+      <td th:text="${client.getPassportSeries()}"></td>
+      <td th:text="${client.getPassportNumber()}"></td>
+      <td th:text="${client.getPhoneNumber()}"></td>
+    </tr>
+  </table>
+</div>
